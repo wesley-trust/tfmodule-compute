@@ -1,1 +1,5 @@
 # tfmodule-windows_virtual_machine
+## CI/CD Pipeline
+| Unit Tests | Integration Tests |
+|  :-------: | :---------------: |
+|[![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/Modules/Deployments/tfmodule-windows_virtual_machine?repoName=wesley-trust%2Ftfmodule-windows_virtual_machine&branchName=main&stageName=Unit)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=63&repoName=wesley-trust%2Ftfmodule-windows_virtual_machine&branchName=main)|[![Build Status](https://dev.azure.com/wesleytrust/Terraform/_apis/build/status/Modules/Deployments/tfmodule-windows_virtual_machine?repoName=wesley-trust%2Ftfmodule-windows_virtual_machine&branchName=main&stageName=Integration)](https://dev.azure.com/wesleytrust/Terraform/_build/latest?definitionId=63&repoName=wesley-trust%2Ftfmodule-windows_virtual_machine&branchName=main)|
