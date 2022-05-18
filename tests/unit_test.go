@@ -13,10 +13,10 @@ func TestPlanSingleInstanceSingleRegion(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
-	rootFolder := "../../../"
+	rootFolder := "../"
 
 	// Path to Terraform example files being tested (relative to the root folder)
-	terraformFolderRelativeToRoot := "./Deployments/Windows_virtual_machine/examples/"
+	terraformFolderRelativeToRoot := "./examples/"
 
 	// Copy the terraform folder to a temp folder to prevent conflicts from parallel runs
 	tempTestFolder := test_structure.CopyTerraformFolderToTemp(t, rootFolder, terraformFolderRelativeToRoot)
@@ -51,10 +51,10 @@ func TestPlanSingleInstanceSingleRegion_DataDisks(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
-	rootFolder := "../../../"
+	rootFolder := "../"
 
 	// Path to Terraform example files being tested (relative to the root folder)
-	terraformFolderRelativeToRoot := "./Deployments/Windows_virtual_machine/examples/"
+	terraformFolderRelativeToRoot := "./examples/"
 
 	// Copy the terraform folder to a temp folder to prevent conflicts from parallel runs
 	tempTestFolder := test_structure.CopyTerraformFolderToTemp(t, rootFolder, terraformFolderRelativeToRoot)
@@ -90,10 +90,10 @@ func TestPlanSingleInstanceSingleRegion_MultiNI(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
-	rootFolder := "../../../"
+	rootFolder := "../"
 
 	// Path to Terraform example files being tested (relative to the root folder)
-	terraformFolderRelativeToRoot := "./Deployments/Windows_virtual_machine/examples/"
+	terraformFolderRelativeToRoot := "./examples/"
 
 	// Copy the terraform folder to a temp folder to prevent conflicts from parallel runs
 	tempTestFolder := test_structure.CopyTerraformFolderToTemp(t, rootFolder, terraformFolderRelativeToRoot)
@@ -129,10 +129,10 @@ func TestMultiInstanceSingleRegion_LB(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
-	rootFolder := "../../../"
+	rootFolder := "../"
 
 	// Path to Terraform example files being tested (relative to the root folder)
-	terraformFolderRelativeToRoot := "./Deployments/Windows_virtual_machine/examples/"
+	terraformFolderRelativeToRoot := "./examples/"
 
 	// Copy the terraform folder to a temp folder to prevent conflicts from parallel runs
 	tempTestFolder := test_structure.CopyTerraformFolderToTemp(t, rootFolder, terraformFolderRelativeToRoot)
@@ -168,10 +168,10 @@ func TestPlanMultiInstanceMultiRegion(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
-	rootFolder := "../../../"
+	rootFolder := "../"
 
 	// Path to Terraform example files being tested (relative to the root folder)
-	terraformFolderRelativeToRoot := "./Deployments/Windows_virtual_machine/examples/"
+	terraformFolderRelativeToRoot := "./examples/"
 
 	// Copy the terraform folder to a temp folder to prevent conflicts from parallel runs
 	tempTestFolder := test_structure.CopyTerraformFolderToTemp(t, rootFolder, terraformFolderRelativeToRoot)
