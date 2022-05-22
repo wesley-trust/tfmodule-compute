@@ -1,6 +1,6 @@
 # tfmodule-windows_virtual_machine
 Terraform module for deploying VMs to Azure, with features enabled via submodules, Terratest Unit/Integration testing via Go, and Regula (OPA) Policy as Code scanning in an Azure DevOps CI/CD Pipeline
-## [CI/CD Pipeline](https://dev.azure.com/wesleytrust/Terraform/_build?definitionId=66)
+## [CI/CD Pipeline](https://dev.azure.com/wesleytrust/Terraform/_build?definitionId=63)
 Select a stage to view in Azure DevOps. *Note that 'Skipped' stages in the last run, will show as "unknown" by design.*
 ### Testing
 | Unit Tests | Integration Tests |
