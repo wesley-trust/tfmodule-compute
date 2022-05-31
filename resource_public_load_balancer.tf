@@ -1,6 +1,6 @@
 # Create public load balancer
 module "public_load_balancer" {
-  depends_on                     = [azurerm_windows_virtual_machine.virtual_machine]
+  depends_on                     = [module.virtual_machine]
   count                          = var.provision_public_load_balancer == true ? 1 : 0
   source                         = "github.com/wesley-trust/tfsubmodule-public_load_balancer"
   resource_location              = module.resource_group.location
