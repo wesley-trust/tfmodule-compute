@@ -2,9 +2,9 @@
 module "network_interfaces" {
 
   # Force explicit dependency to prevent race condition/deadlock in network module
-  depends_on                          = [
+  depends_on = [
     module.service_network
-    ]
+  ]
 
   count                               = var.resource_instance_count
   source                              = "github.com/wesley-trust/tfsubmodule-network_interfaces"
