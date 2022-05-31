@@ -27,7 +27,7 @@ module "virtual_machine" {
   size                      = var.resource_instance_size
   admin_username            = var.admin_username
   admin_password            = random_password.password[count.index].result
-  operating_system_platform = "Windows"
+  operating_system_platform = var.operating_system_platform
   disk_size_gb              = var.resource_disk_size
   sku                       = var.resource_vm_sku
   environment               = var.service_environment

@@ -45,6 +45,11 @@ variable "resource_instance_size" {
   type        = string
 }
 
+variable "operating_system_platform" {
+  description = "Desired OS for the provisioned resources"
+  type        = string
+}
+
 # Defined resource variables
 variable "platform_location_fault_domain" {
   description = "Number of fault domains in the location"

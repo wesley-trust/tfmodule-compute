@@ -48,6 +48,12 @@ variable "resource_instance_size" {
   }
 }
 
+variable "operating_system_platform" {
+  description = "Desired OS for the provisioned resources"
+  type        = string
+  default     = "Linux"
+}
+
 variable "resource_address_space" {
   description = "Desired address space for the provisioned resources"
   type        = map(string)
