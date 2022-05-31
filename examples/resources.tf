@@ -1,4 +1,4 @@
-module "windows_virtual_machine" {
+module "compute" {
   for_each                = toset(var.service_location)
   source                  = "../"
   service_environment     = var.service_environment

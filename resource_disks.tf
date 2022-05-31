@@ -2,7 +2,7 @@
 module "data_disks" {
   depends_on = [
     module.resource_group,
-    azurerm_windows_virtual_machine.virtual_machine
+    module.virtual_machine
   ]
   count                       = var.resource_instance_count
   source                      = "github.com/wesley-trust/tfsubmodule-disks"
@@ -13,5 +13,5 @@ module "data_disks" {
   resource_zone               = local.platform_location_az_count > 1 ? (count.index % local.platform_location_az_count) + 1 : null
   resource_data_disk_count    = var.resource_data_disk_count
   resource_data_disk_size     = var.resource_data_disk_size
-  resource_virtual_machine_id = element(azurerm_windows_virtual_machine.virtual_machine.*.id, count.index)
+  resource_virtual_machine_id = module.virtual_machine[count.index].id
 }

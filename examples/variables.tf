@@ -36,7 +36,6 @@ variable "resource_name" {
 variable "resource_instance_count" {
   description = "Desired number of the provisioned resources for each service environment"
   type        = string
-  default     = 1
 }
 
 variable "resource_instance_size" {

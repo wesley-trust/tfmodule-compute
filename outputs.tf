@@ -3,7 +3,7 @@ output "public_ip_id" {
 }
 
 output "virtual_machine_id" {
-  value = azurerm_windows_virtual_machine.virtual_machine[*].id
+  value = module.virtual_machine[*].id
 }
 
 output "resource_group_name" {
