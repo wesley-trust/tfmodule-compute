@@ -23,9 +23,10 @@ func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "SingleInstanceSingleRegion"
+	testREF := "SingleInstanceSingleRegion_Windows"
 	serviceDeployment := testREF + "-" + uniqueID
 	operatingSystemPlatform := "Windows"
+	resourceVmSku := "2022-datacenter-smalldisk-g2"
 
 	// Define variables
 	locations := []string{"UK South"}
@@ -38,10 +39,11 @@ func TestApplySingleInstanceSingleRegion_Windows(t *testing.T) {
 
 		// Variables to pass to the Terraform code using -var options
 		Vars: map[string]interface{}{
-			"service_deployment":      serviceDeployment,
-			"resource_instance_count": 1,
-			"service_location":        locations,
-			"operating_system_platform" : operatingSystemPlatform,
+			"service_deployment":        serviceDeployment,
+			"resource_instance_count":   1,
+			"service_location":          locations,
+			"operating_system_platform": operatingSystemPlatform,
+			"resource_vm_sku":           resourceVmSku,
 		},
 	})
 
@@ -66,7 +68,7 @@ func TestApplySingleInstanceSingleRegion_Linux(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "SingleInstanceSingleRegion"
+	testREF := "SingleInstanceSingleRegion_Linux"
 	serviceDeployment := testREF + "-" + uniqueID
 
 	// Define variables
