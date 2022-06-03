@@ -1,4 +1,3 @@
-# Create spoke network dependencies
 module "data_disks" {
   depends_on = [
     module.resource_group,
