@@ -9,7 +9,7 @@ import (
 	test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
 )
 
-func TestPlanMultiInstanceMultiRegion_Disks_NI_LB(t *testing.T) {
+func TestPlanMulti_Instance_Region_Disks_NI_LB(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -23,11 +23,11 @@ func TestPlanMultiInstanceMultiRegion_Disks_NI_LB(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "MultiInstanceMultiRegion_Disks_NI_LB"
+	testREF := "Multi_Instance_Region_Disks_NI_LB"
 	serviceDeployment := testREF + "-" + uniqueID
 
 	// Define variables
-	locations := []string{"UK South", "North Central US"}
+	locations := []string{"UK South", "North Central US"} // Includes a region with Availability Zones and one using an Availability Set
 
 	// Enable retryable error
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
