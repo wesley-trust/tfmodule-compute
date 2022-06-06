@@ -4,7 +4,7 @@ module "data_disks" {
     module.virtual_machine
   ]
   count                       = var.resource_instance_count
-  source                      = "github.com/wesley-trust/tfsubmodule-disks?ref=v1"
+  source                      = "github.com/wesley-trust/tfsubmodule-disks?ref=v1-disks"
   resource_location           = module.resource_group.location
   resource_group_name         = module.resource_group.name
   resource_environment        = var.service_environment
