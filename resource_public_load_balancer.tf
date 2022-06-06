@@ -2,7 +2,7 @@
 module "public_load_balancer" {
   depends_on                     = [module.virtual_machine]
   count                          = var.provision_public_load_balancer == true ? 1 : 0
-  source                         = "github.com/wesley-trust/tfsubmodule-public_load_balancer"
+  source                         = "github.com/wesley-trust/tfsubmodule-public_load_balancer?ref=v1"
   resource_location              = module.resource_group.location
   resource_group_name            = module.resource_group.name
   resource_environment           = var.service_environment

@@ -19,7 +19,7 @@ module "virtual_machine" {
   depends_on = [
     module.network_interfaces
   ]
-  source                    = "github.com/wesley-trust/tfsubmodule-virtual_machine"
+  source                    = "github.com/wesley-trust/tfsubmodule-virtual_machine?ref=v1"
   count                     = var.resource_instance_count
   name                      = "${local.resource_name}${format("%02d", count.index + 1)}-vm"
   location                  = module.resource_group.location
