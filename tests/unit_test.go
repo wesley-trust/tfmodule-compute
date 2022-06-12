@@ -9,7 +9,7 @@ import (
 	test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
 )
 
-func TestPlanMulti_Instance_Region_Disks_NI_LB(t *testing.T) {
+func TestPlanMulti_Instance_Region_Disks_NI_LB_Shutdown(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -23,7 +23,7 @@ func TestPlanMulti_Instance_Region_Disks_NI_LB(t *testing.T) {
 
 	// Generate a random deployment name for the test to prevent a naming conflict
 	uniqueID := random.UniqueId()
-	testREF := "Multi_Instance_Region_Disks_NI_LB"
+	testREF := "Multi_Instance_Region_Disks_NI_LB_Shutdown"
 	serviceDeployment := testREF + "-" + uniqueID
 
 	// Define variables
@@ -43,6 +43,7 @@ func TestPlanMulti_Instance_Region_Disks_NI_LB(t *testing.T) {
 			"resource_data_disk_count":         2,
 			"resource_network_interface_count": 2,
 			"provision_public_load_balancer":   true,
+			"resource_shutdown_enabled":        true,
 		},
 	})
 
