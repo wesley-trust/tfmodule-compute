@@ -108,3 +108,9 @@ variable "provision_public_load_balancer" {
   type        = bool
   default     = false
 }
+
+variable "resource_shutdown_enabled" {
+  description = "Whether to shutdown the VMs daily"
+  type        = bool
+  default     = false
+}

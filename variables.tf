@@ -152,3 +152,15 @@ variable "resource_network_role" {
   description = "The network type for peering"
   type        = string
 }
+
+variable "resource_shutdown_enabled" {
+  description = "Whether to shutdown the VMs daily"
+  type        = bool
+  default     = false
+}
+
+variable "daily_shutdown_time" {
+  description = "The shutdown time for the VMs (Must match the format HHmm where HH is 00-23 and mm is 00-59 (e.g. 0930, 2300, etc.))"
+  type        = string
+  default     = "2300"
+}
