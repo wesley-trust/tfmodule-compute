@@ -152,3 +152,9 @@ variable "resource_network_role" {
   description = "The network type for peering"
   type        = string
 }
+
+variable "resource_shutdown_enabled" {
+  description = "Whether to shutdown the VMs at 11pm daily"
+  type        = bool
+  default     = false
+}
