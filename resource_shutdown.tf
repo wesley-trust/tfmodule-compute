@@ -4,7 +4,7 @@ resource "azurerm_dev_test_global_vm_shutdown_schedule" "shutdown_schedule" {
   location           = module.resource_group.location
   enabled            = true
 
-  daily_recurrence_time = "2300"
+  daily_recurrence_time = var.daily_shutdown_time
   timezone              = "GMT Standard Time"
 
   notification_settings {
