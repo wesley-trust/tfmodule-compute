@@ -35,6 +35,18 @@ variable "resource_name" {
   type        = string
 }
 
+variable "resource_image" {
+  description = "Desired image for the provisioned resources"
+  type        = string
+  default     = null
+}
+
+variable "resource_image_group" {
+  description = "Resource group name of image for the provisioned resources"
+  type        = string
+  default     = null
+}
+
 variable "resource_instance_count" {
   description = "Desired number of the provisioned resources for each service environment"
   type        = string
