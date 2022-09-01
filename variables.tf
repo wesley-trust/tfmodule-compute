@@ -38,13 +38,13 @@ variable "resource_name" {
 variable "resource_image" {
   description = "Desired image for the provisioned resources"
   type        = string
-  nullable    = true
+  default     = null
 }
 
 variable "resource_image_group" {
   description = "Resource group name of image for the provisioned resources"
   type        = string
-  nullable    = true
+  default     = null
 }
 
 variable "resource_instance_count" {
