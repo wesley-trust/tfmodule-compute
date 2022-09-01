@@ -22,6 +22,7 @@ module "virtual_machine" {
   source                    = "github.com/wesley-trust/tfsubmodule-virtual_machine?ref=v1-virtual_machine"
   count                     = var.resource_instance_count
   name                      = "${local.resource_name}${format("%02d", count.index + 1)}-vm"
+  image                     = data.azurerm_image.search[0].id != null ? data.azurerm_image.search[0].id : null
   location                  = module.resource_group.location
   resource_group_name       = module.resource_group.name
   size                      = var.resource_instance_size
