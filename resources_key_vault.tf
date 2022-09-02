@@ -1,6 +1,6 @@
 # Creation of key vault
 module "key_vault" {
-  count                                = var.provision_key_vault ? 1 : 0
+  count                                = var.provision_scale_set != true ? (var.provision_key_vault == true ? 1 : 0) : 0
   source                               = "github.com/wesley-trust/tfsubmodule-key_vault?ref=v1-key_vault"
   resource_location                    = module.resource_group.location
   resource_group_name                  = module.resource_group.name

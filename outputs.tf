@@ -3,7 +3,7 @@ output "public_ip_id" {
 }
 
 output "virtual_machine_id" {
-  value = module.virtual_machine[*].id
+  value = local.virtual_machine_id
 }
 
 output "resource_group_name" {
