@@ -1,7 +1,7 @@
 # Create scale set
 module "virtual_machine_scale_set" {
   depends_on = [
-    module.network_interfaces
+    module.service_network
   ]
   source                    = "github.com/wesley-trust/tfsubmodule-virtual_machine_scale_set?ref=v1-virtual_machine_scale_set"
   count                     = var.provision_scale_set == true ? 1 : 0
