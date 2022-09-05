@@ -6,7 +6,7 @@ module "network_interfaces" {
     module.service_network
   ]
 
-  count                               = var.resource_instance_count
+  count                               = var.provision_scale_set != true ? var.resource_instance_count : 0
   source                              = "github.com/wesley-trust/tfsubmodule-network_interfaces?ref=v1-network_interfaces"
   resource_location                   = module.resource_group.location
   resource_group_name                 = module.resource_group.name

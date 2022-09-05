@@ -28,6 +28,7 @@ variable "resource_address_space" {
 variable "resource_dns_servers" {
   description = "Desired DNS servers for the provisioned resources"
   type        = list(any)
+  default     = null
 }
 
 variable "resource_name" {
@@ -50,6 +51,7 @@ variable "resource_image_group" {
 variable "resource_instance_count" {
   description = "Desired number of the provisioned resources for each service environment"
   type        = string
+  default     = 1
 }
 
 variable "resource_instance_size" {
@@ -175,4 +177,10 @@ variable "daily_shutdown_time" {
   description = "The shutdown time for the VMs (Must match the format HHmm where HH is 00-23 and mm is 00-59 (e.g. 0930, 2300, etc.))"
   type        = string
   default     = "2300"
+}
+
+variable "provision_scale_set" {
+  description = "Whether to provision a key vault"
+  type        = bool
+  default     = false
 }

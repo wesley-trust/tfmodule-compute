@@ -16,4 +16,10 @@ locals {
   resource_subnet_name                 = "${var.service_name}Subnet"
   resource_route_table_name            = "${local.resource_subnet_name}-rt"
   resource_network_security_group_name = "${local.resource_subnet_name}-nsg"
+
+  # Output return
+  virtual_machine_id = try(
+    module.virtual_machine[*].id,
+    module.virtual_machine_scale_set[*].id
+  )
 }

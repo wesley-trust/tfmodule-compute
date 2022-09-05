@@ -2,7 +2,7 @@
 resource "azurerm_availability_set" "availability_set" {
 
   # If there is less than one availability zone, create availability set
-  count = local.platform_location_az_count < 1 ? 1 : 0
+  count = var.provision_scale_set != true ? (local.platform_location_az_count < 1 ? 1 : 0) : 0
 
   # Format with leading zero
   name                        = "${local.resource_name}-as"
@@ -20,7 +20,7 @@ module "virtual_machine" {
     module.network_interfaces
   ]
   source                    = "github.com/wesley-trust/tfsubmodule-virtual_machine?ref=v1.1-virtual_machine"
-  count                     = var.resource_instance_count
+  count                     = var.provision_scale_set != true ? var.resource_instance_count : 0
   name                      = "${local.resource_name}${format("%02d", count.index + 1)}-vm"
   source_image_id           = var.resource_image != null ? data.azurerm_image.search[0].id : null
   location                  = module.resource_group.location
