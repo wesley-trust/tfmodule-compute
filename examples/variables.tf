@@ -118,5 +118,5 @@ variable "resource_shutdown_enabled" {
 variable "provision_scale_set" {
   description = "Whether to provision a key vault"
   type        = bool
-  default     = false
+  default     = null
 }
