@@ -91,7 +91,7 @@ variable "platform_location_az" {
 variable "resource_vm_sku" {
   description = "Desired size for the provisioned resources"
   type        = string
-  default     = "2022-datacenter-smalldisk-g2"
+  default     = null
 }
 
 variable "resource_data_disk_count" {
