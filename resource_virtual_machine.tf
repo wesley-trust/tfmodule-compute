@@ -19,7 +19,7 @@ module "virtual_machine" {
   depends_on = [
     module.network_interfaces
   ]
-  source                    = "github.com/wesley-trust/tfsubmodule-virtual_machine?ref=v1.1-virtual_machine"
+  source                    = "github.com/wesley-trust/tfsubmodule-virtual_machine?ref=v1.2-virtual_machine"
   count                     = var.provision_scale_set != true ? var.resource_instance_count : 0
   name                      = "${local.resource_name}${format("%02d", count.index + 1)}-vm"
   source_image_id           = var.resource_image != null ? data.azurerm_image.search[0].id : null
@@ -30,6 +30,7 @@ module "virtual_machine" {
   admin_password            = random_password.password[count.index].result
   operating_system_platform = var.operating_system_platform
   disk_size_gb              = var.resource_disk_size
+  ephemeral_disk_enabled    = var.ephemeral_disk_enabled
   sku                       = var.resource_vm_sku
   environment               = var.service_environment
 

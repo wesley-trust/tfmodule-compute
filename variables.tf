@@ -91,7 +91,7 @@ variable "platform_location_az" {
 variable "resource_vm_sku" {
   description = "Desired size for the provisioned resources"
   type        = string
-  default     = "2022-datacenter-smalldisk-g2"
+  default     = null
 }
 
 variable "resource_data_disk_count" {
@@ -181,6 +181,12 @@ variable "daily_shutdown_time" {
 
 variable "provision_scale_set" {
   description = "Whether to provision a key vault"
+  type        = bool
+  default     = null
+}
+
+variable "ephemeral_disk_enabled" {
+  description = "Whether to use a ephemeral OS disk the provisioned resources"
   type        = bool
   default     = null
 }
