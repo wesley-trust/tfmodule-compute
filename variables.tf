@@ -184,3 +184,9 @@ variable "provision_scale_set" {
   type        = bool
   default     = null
 }
+
+variable "ephemeral_disk_enabled" {
+  description = "Whether to use a ephemeral OS disk the provisioned resources"
+  type        = bool
+  default     = null
+}
