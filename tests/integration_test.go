@@ -9,7 +9,8 @@ import (
 	test_structure "github.com/gruntwork-io/terratest/modules/test-structure"
 )
 
-func TestApplyMulti_Instance_Region_Disks_NI_LB_Shutdown(t *testing.T) {
+//func TestApplyMulti_Instance_Region_Disks_NI_LB_Shutdown(t *testing.T) { // Removing secondary region temporarily due to capacity constraints leading to failed allocations
+func TestApplySingle_Region_Multi_Instance_Disks_NI_LB_Shutdown(t *testing.T) {
 	t.Parallel()
 
 	// Root folder where Terraform files should be (relative to the test folder)
@@ -27,7 +28,8 @@ func TestApplyMulti_Instance_Region_Disks_NI_LB_Shutdown(t *testing.T) {
 	serviceDeployment := testREF + "-" + uniqueID
 
 	// Define variables
-	locations := []string{"UK South", "North Central US"} // Includes a region with Availability Zones and one using an Availability Set
+	//locations := []string{"UK South", "North Central US"} // Includes a region with Availability Zones and one using an Availability Set
+	locations := []string{"UK South"} // Removing secondary region temporarily due to capacity constraints leading to failed allocations
 
 	// Enable retryable error
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
