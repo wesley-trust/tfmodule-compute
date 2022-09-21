@@ -6,7 +6,7 @@ module "virtual_machine_scale_set" {
   source                    = "github.com/wesley-trust/tfsubmodule-virtual_machine_scale_set?ref=v1.2-virtual_machine_scale_set"
   count                     = var.provision_scale_set == true ? 1 : 0
   name                      = local.resource_name
-  source_image_id           = var.resource_image != null ? data.azurerm_image.search[0].id : null
+  source_image_id           = var.resource_image != null ? data.azurerm_images.search[0].id : null
   location                  = module.resource_group.location
   resource_group_name       = module.resource_group.name
   size                      = var.resource_instance_size
